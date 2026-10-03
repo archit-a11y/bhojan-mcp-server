@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: delhivery-mock-mcp
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ADMIN_KEY
+        generateValue: true
+      - key: DELHIVERY_MOCK_TOKEN
+        value: test-token
+    healthCheckPath: /health
